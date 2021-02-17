@@ -25,7 +25,7 @@ namespace BC_IS414_Lab3
         public void SignTransaction(PrivateKey signingkey)
         {
             string fromaddressDER = BitConverter.ToString(FromAddress.toDer()).Replace("-", "");
-            string signingDER = BitConverter.ToString(signingkey.toDer()).Replace("-", "");
+            string signingDER = BitConverter.ToString(signingkey.publicKey().toDer()).Replace("-", "");
 
             if(fromaddressDER != signingDER)
             {
